@@ -287,6 +287,10 @@
         </div>
     </div>
 
+    <div id="visitCounter" style="text-align:center; margin-top: 16px; color: var(--light-slate);">
+        页面访问量：<strong id="visitCount">-</strong>
+    </div>
+
     <div id="modal1" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -409,5 +413,16 @@
         }
     </script>
 
+    <script>
+        (function() {
+            var countEl = document.getElementById('visitCount');
+            if (!countEl) return;
+            var endpoint = location.origin + '/api/hit';
+            fetch(endpoint, { method: 'POST' })
+                .then(function(r){ return r.json(); })
+                .then(function(d){ countEl.textContent = d.count; })
+                .catch(function(){ countEl.textContent = 'N/A'; });
+        })();
+    </script>
 </body>
 </html>
