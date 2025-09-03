@@ -55,6 +55,15 @@ def serve_index_alias():
     return send_from_directory(APP_DIR, 'index.html')
 
 
+@app.route('/<filename>')
+def serve_static_files(filename):
+    """Serve static files including Chinese filenames"""
+    try:
+        return send_from_directory(APP_DIR, filename)
+    except FileNotFoundError:
+        return "File not found", 404
+
+
 @app.route('/api/count', methods=['GET'])
 def get_count():
     db = get_db()

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冷链时效全景流程</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="header">
+            <h1>冷链时效全景流程</h1>
+            <p>探索冷链订单从创建到履约的完整时效控制链路</p>
+        </header>
+
+        <div class="flowchart-wrapper">
+            <div class="flow-step">
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.905 59.905 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0l-2.072-1.036A59.902 59.902 0 0112 3.493a59.902 59.902 0 0110.072 5.614l-2.072 1.036m-15.482 0A50.57 50.57 0 0112 13.489a50.57 50.57 0 017.74-3.342M12 20.904v-3.342" />
+                    </svg>
+                </div>
+                <h3 class="step-title">外部商家ERP / 订单中心</h3>
+                <p class="step-description">订单起点，负责销售出库单的ES映射和时效控单标记</p>
+                <button class="btn" onclick="openModal('modal1')">查看详情</button>
+            </div>
+
+            <div class="connector"></div>
+
+            <div class="flow-step">
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V7.5a2.25 2.25 0 00-2.25-2.25H7.5A2.25 2.25 0 005.25 7.5v9.75a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                </div>
+                <h3 class="step-title">ECLP：订单控单核心</h3>
+                <p class="step-description">订单枢纽，与Promise和产品中心交互，执行控单决策</p>
+                <button class="btn" onclick="openModal('modal2')">查看详情</button>
+            </div>
+
+            <div class="connector"></div>
+
+            <div class="flow-step">
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                    </svg>
+                </div>
+                <h3 class="step-title">Promise：时效计算与决策引擎</h3>
+                <p class="step-description">计算预计妥投时间、出库时间和订单下传时间</p>
+                <button class="btn" onclick="openModal('modal3')">查看详情</button>
+            </div>
+            
+            <div class="connector"></div>
+
+                        <div class="flow-step">
+                 <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 21z" />
+                    </svg>
+                </div>
+                <h3 class="step-title">时效信息获取与耗材推荐</h3>
+                <p class="step-description">通过路由系统获取配送时效，作为运单履约标准</p>
+                <button class="btn" onclick="openModal('modal4')">查看详情</button>
+            </div>
+
+            <div class="connector"></div>
+
+            <div class="flow-step">
+                 <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                    </svg>
+                </div>
+                <h3 class="step-title">仓库生产与后续流程</h3>
+                <p class="step-description">订单下发至WMS，完成拣货打包，进入物流履约阶段</p>
+                <button class="btn" onclick="openModal('modal5')">查看详情</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="q-and-a-container">
+        <h2>常见问题 Q&A</h2>
+        <div class="q-and-a-list">
+            <div class="q-and-a-item">
+                <button class="q-and-a-question">
+                    <span>冷链时效控单的订单判断条件是什么？</span>
+                    <span class="q-and-a-toggle">+</span>
+                </button>
+                <div class="q-and-a-answer">
+                    <p>订单需满足以下条件才会被纳入时效控单流程：</p>
+                    <ul>
+                        <li><strong>订单来源：</strong>非POP。</li>
+                        <li><strong>仓产品：</strong>生鲜商务仓、冷链电商仓、医药商务仓。</li>
+                        <li><strong>订单类型：</strong>B2C。</li>
+                        <li><strong>承运商：</strong>京配。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="q-and-a-item">
+                <button class="q-and-a-question">
+                    <span>为什么订单没有下传到WMS？</span>
+                    <span class="q-and-a-toggle">+</span>
+                </button>
+                <div class="q-and-a-answer">
+                    <p>订单未能下传通常是因为未达到控单时间。您可以检查以下控单逻辑：</p>
+                    <ul>
+                        <li><strong>一期逻辑：</strong>当前时间是否已超过Promise返回的"订单下传时间"？</li>
+                        <li><strong>三期优化逻辑：</strong>"订单下传时间"与"当前时间"的差值（小时维度）是否小于或等于36小时？</li>
+                    </ul>
+                    <p>此外，对于生鲜特惠/特快订单，还需额外检查"预计妥投时间"与"预计出库时间"的日期差是否超出产品时效阈值。</p>
+                </div>
+            </div>
+
+            <div class="q-and-a-item">
+                <button class="q-and-a-question">
+                    <span>如果Promise接口调用失败会发生什么？</span>
+                    <span class="q-and-a-toggle">+</span>
+                </button>
+                <div class="q-and-a-answer">
+                    <p>当Promise接口调用失败时，ECLP系统会记录控单异常的订单，并会<strong>定时轮询</strong>这些异常订单，再次尝试调用接口并进行控单判断。这确保了即使出现临时故障，订单也能在后续被正常处理。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 模态框容器 -->
+    <div id="modal1" class="modal"></div>
+    <div id="modal2" class="modal"></div>
+    <div id="modal3" class="modal"></div>
+    <div id="modal4" class="modal"></div>
+    <div id="modal5" class="modal"></div>
+
+    <script src="script.js"></script>
+    <script>
+        function openModal(modalId) { 
+            document.getElementById(modalId).style.display = "block"; 
+        }
+        function closeModal(modalId) { 
+            document.getElementById(modalId).style.display = "none"; 
+        }
+    </script>
+
+</body>
+</html>
